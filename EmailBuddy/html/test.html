@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Editor</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      #editor {
+        border: 1px solid #ccc;
+        padding: 10px;
+        min-height: 200px;
+        margin-bottom: 20px;
+      }
+      #editor:focus {
+        outline: none;
+      }
+      .toolbar button {
+        margin-right: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Email Editor</h1>
+    <div class="toolbar">
+      <button onclick="document.execCommand('bold')">B</button>
+      <button onclick="document.execCommand('italic')">I</button>
+      <button onclick="document.execCommand('underline')">U</button>
+      <button onclick="document.execCommand('backColor', false, 'yellow')">
+        H
+      </button>
+    </div>
+    <div id="editor" contenteditable="true"></div>
+    <button onclick="sendEmail()">Send</button>
+
+    <script>
+      function sendEmail() {
+        const editorContent = document.getElementById("editor").innerHTML;
+        console.log("Email content in HTML format:", editorContent);
+        alert(
+          "Email content has been converted to HTML format. Check the console for details."
+        );
+      }
+    </script>
+  </body>
+</html>

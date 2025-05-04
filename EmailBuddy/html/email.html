@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Buddy</title>
+    <link rel="stylesheet" href="/EmailBuddy/css/email-card.css" />
+    <script src="/EmailBuddy/js/mail.js"></script>
+  </head>
+  <body>
+    <div class="email-card">
+      <header>
+        <img src="/EmailBuddy/images/logo.png" alt="Logo" class="logo" />
+        <h2>Email Buddy</h2>
+      </header>
+      <article>
+        <form>
+          <div class="email-card-container">
+            <select id="to" name="to">
+              <option value="" disabled selected>To</option>
+              <option value="Sample Mail">Test Users</option>
+              <option value="Browser Users">Browser Users</option>
+              <option value="Device Users">Device Users</option>
+              <option value="All Users">All Users</option>
+            </select>
+
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Enter subject"
+            />
+            <div class="toolbar">
+              <img
+                src="/EmailBuddy/images/bold.png"
+                alt="Bold"
+                onclick="document.execCommand('bold')"
+              />
+              <img
+                src="/EmailBuddy/images/italic.png"
+                alt="Italic"
+                onclick="document.execCommand('italic')"
+              />
+              <img
+                src="/EmailBuddy/images/underline.png"
+                alt="Underline"
+                onclick="document.execCommand('underline')"
+              />
+              <img
+                src="/EmailBuddy/images/highlight.png"
+                alt="Highlight"
+                onclick="document.execCommand('backColor', true, 'yellow')"
+              />
+              <img
+                src="/EmailBuddy/images/unorderedList.png"
+                alt="unorderedList"
+                onclick="document.execCommand('insertUnorderedList')"
+              />
+              <img
+                src="/EmailBuddy/images/orderedList.png"
+                alt="orderedList"
+                onclick="document.execCommand('insertOrderedList')"
+              />
+            </div>
+
+            <div id="editor" contenteditable="true"></div>
+
+            <div class="email-trigger">
+              <button type="submit" onclick="sendEmail()">Send Email</button>
+            </div>
+          </div>
+        </form>
+      </article>
+      <footer>
+        <p>&copy; 2025 Email Buddy. All rights reserved to Deepesh Saraswat</p>
+      </footer>
+    </div>
+  </body>
+</html>
