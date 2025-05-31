@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="text/javascript">
-      var x;
-      var y;
-      document.write(x);
-      document.write(y);
-      document.write(x == y);
-      document.write(x === y);
+      var name = prompt("Enter your name", "Harry Potter");
+      console.log(name);
+      document.write("Hello " + name + "! Welcome to the JavaScript world.");
+      document.write("<br>");
+      document.write(
+        "You have entered: " + Math.floor(Math.random() * 100) + "<br>"
+      );
     </script>
   </head>
   <body></body>
