@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let shopinglist = [];
+      shopinglist.push("Milk");
+      shopinglist.push("Bread");
+      shopinglist.push("Apples");
+      console.log(shopinglist);
+      shopinglist.splice(1, 1, "Bananas", "Eggs");
+      console.log(shopinglist);
+      shopinglist.pop();
+      console.log(shopinglist);
+      shopinglist.sort();
+      console.log(shopinglist);
+      console.log(shopinglist.indexOf("Milk"));
+      shopinglist.splice(1, 0, `Carrots`, `Lettuce`);
+      console.log(shopinglist);
+      let newList = [`Juice`];
+      console.log(newList.pop());
+      shopinglist = shopinglist.concat(newList).concat(newList);
+      console.log(shopinglist);
+      console.log(shopinglist[shopinglist.length - 1]);
+      console.log(shopinglist.pop());
+      console.log(shopinglist);
+    </script>
+  </head>
+  <body></body>
+</html>

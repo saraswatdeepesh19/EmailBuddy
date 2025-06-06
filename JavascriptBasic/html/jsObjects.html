@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let machineNumber = Math.floor(Math.random() * 89);
+      document.write(`<h2>Machine number is: ${machineNumber}</h2>`);
+
+      let userInput = Math.floor(Math.random() * 89) + 10;
+      document.write(`<h2>Your number is: ${userInput}</h2>`);
+      userInput > machineNumber
+        ? document.write("<h1>You win!</h1>")
+        : document.write("<h1>You lose!<h1>");
+    </script>
+  </head>
+  <body></body>
+</html>
