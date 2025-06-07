@@ -1,3 +1,6 @@
+let userScore = 0;
+let computerScore = 0;
+
 function playGame(choice) {
   console.log("Game started with choice:", choice);
   // Your game logic here
@@ -7,19 +10,23 @@ function playGame(choice) {
   console.log("Computer choice:", computerChoice);
   let result = "";
   if (choice === computerChoice) {
-    result = "It's a tie! Computer choose " + computerChoice;
+    result = `It's a tie! You chose ${choice}, Computer chose ${computerChoice}.`;
   } else if (
     (choice === "rock" && computerChoice === "scissor") ||
     (choice === "paper" && computerChoice === "rock") ||
     (choice === "scissor" && computerChoice === "paper")
   ) {
-    result = "You win! Computer choose " + computerChoice;
+    userScore++;
+    result = `You win! You chose ${choice}, Computer chose ${computerChoice}.`;
   } else {
-    result = "You lose! Computer choose " + computerChoice;
+    computerScore++;
+    result = `You lose! You chose ${choice}, Computer chose ${computerChoice}.`;
   }
 
-  document.getElementById("result").textContent =
-    result.charAt(0).toUpperCase() + result.slice(1);
+  document.getElementById("result").textContent = result;
+
+  document.getElementById("user-score").textContent = userScore;
+  document.getElementById("computer-score").textContent = computerScore;
 }
 
 document.getElementById("rock").addEventListener("click", function () {
