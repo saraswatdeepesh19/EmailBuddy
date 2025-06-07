@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissor</title>
+    <script>
+      function playGame() {
+        const userSelect = document.querySelector(
+          'input[name="userSelect"]:checked'
+        );
+        if (userSelect) {
+          console.log(`User selected: ${userSelect.id}`);
+        } else {
+          console.log("No selection made");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Rock-Paper-Scissor Game</h1>
+    <div>
+      <input type="radio" name="userSelect" id="Rock" />
+      <label for="Rock">Rock</label>
+      <input type="radio" name="userSelect" id="Paper" />
+      <label for="Paper">Paper</label>
+      <input type="radio" name="userSelect" id="Scissor" />
+      <label for="Scissor">Scissor</label>
+    </div>
+    <button onclick="playGame()">Play Game</button>
+  </body>
+</html>
