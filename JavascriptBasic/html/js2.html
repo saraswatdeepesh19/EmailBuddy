@@ -5,29 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="text/javascript">
-      var name = prompt("Enter your name", "Harry Potter");
-      console.log(name);
-      document.write("Hello " + name + "! Welcome to the JavaScript world.");
-      document.write("<br>");
-      document.write(
-        "You have entered: " + Math.floor(Math.random() * 100) + "<br>"
-      );
-      let str1 = "Laurence";
-      let str2 = "Svekis";
-      let val1 = undefined;
-      let val2 = null;
-      let myNum = 1000;
-      console.log(str1 + " : " + typeof str1);
-      console.log(str2 + " : " + typeof str2);
-      console.log(val1 + " : " + typeof val1);
-      console.log(val2 + " : " + typeof val2);
-      console.log(myNum + " : " + typeof myNum);
+      let multiplicationTable = [];
 
-      let nr = 2;
+      const value = 10;
 
-      console.log(nr++);
-
-      //console.log(++nr);
+      for (let i = 1; i <= value; i++) {
+        let tempArray = [];
+        for (let j = 1; j <= value; j++) {
+          tempArray.push(i * j);
+        }
+        multiplicationTable.push(tempArray);
+      }
+      for (let row of multiplicationTable) {
+        console.log(row.join("\t"));
+      }
+      // Output the multiplication table to the console
     </script>
   </head>
   <body></body>
