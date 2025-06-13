@@ -1,0 +1,12 @@
+.body-container {
+  display: grid;
+  grid-template-rows: 0.25fr 2fr 0.25fr auto;
+  grid-template-columns: 1fr;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-items: center;
+  height: 100vh;
+  background-image: linear-gradient(0.25turn, #050222, #0d0b2b, #050222);
+  color: #fff;
+}

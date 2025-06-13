@@ -5,21 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script type="text/javascript">
-      let multiplicationTable = [];
-
-      const value = 10;
-
-      for (let i = 1; i <= value; i++) {
-        let tempArray = [];
-        for (let j = 1; j <= value; j++) {
-          tempArray.push(i * j);
-        }
-        multiplicationTable.push(tempArray);
+      function add(a, b, c) {
+        return a + b + c;
       }
-      for (let row of multiplicationTable) {
-        console.log(row.join("\t"));
-      }
-      // Output the multiplication table to the console
+      console.log(add(1, 2, 3)); //   6
+      console.log(add(1, 2)); // NaN
+      console.log(add(1)); // NaN
+      console.log(add()); // NaN
+      console.log(add(1, 2, 3, 4)); // 6
     </script>
   </head>
   <body></body>
