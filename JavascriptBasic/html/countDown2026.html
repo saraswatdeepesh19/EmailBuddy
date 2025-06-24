@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown Timer</title>
+    <style>
+      body {
+        background: #181a20;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .countdown-container {
+        background: #23243a;
+        padding: 30px 40px;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+      .countdown-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        letter-spacing: 2px;
+      }
+      .countdown-values {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        font-size: 1.5rem;
+      }
+      .countdown-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .countdown-label {
+        font-size: 0.9rem;
+        color: #aaa;
+        margin-top: 5px;
+      }
+      .complete-message {
+        margin-top: 20px;
+        color: #4caf50;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+    </style>
+    <script type="text/javascript">
+      // Set the target end date (format: "YYYY-MM-DDTHH:MM:SS")
+      const endDate = "2026-01-01T00:00:00";
+
+      function countdown(targetDate) {
+        const now = Date.now();
+        const end = Date.parse(targetDate);
+        let ms = end - now;
+        ms = ms > 0 ? ms : 0;
+
+        const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+
+        return {
+          milliseconds: ms,
+          days: days,
+          hours: hours,
+          minutes: minutes,
+          seconds: seconds,
+        };
+      }
+
+      function update() {
+        const temp = countdown(endDate);
+        document.getElementById("days").textContent = temp.days;
+        document.getElementById("hours").textContent = temp.hours;
+        document.getElementById("minutes").textContent = temp.minutes;
+        document.getElementById("seconds").textContent = temp.seconds;
+
+        if (temp.milliseconds > 0) {
+          setTimeout(update, 1000);
+        } else {
+          document.getElementById("complete").textContent =
+            "Countdown complete!";
+        }
+      }
+
+      window.onload = update;
+    </script>
+  </head>
+  <body>
+    <div class="countdown-container">
+      <div class="countdown-title">Countdown to 2026</div>
+      <div class="countdown-values">
+        <div class="countdown-item">
+          <span id="days">0</span>
+          <span class="countdown-label">Days</span>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">0</span>
+          <span class="countdown-label">Hours</span>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes">0</span>
+          <span class="countdown-label">Minutes</span>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds">0</span>
+          <span class="countdown-label">Seconds</span>
+        </div>
+      </div>
+      <div id="complete" class="complete-message"></div>
+    </div>
+  </body>
+</html>

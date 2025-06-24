@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CountDown2027</title>
+    <script>
+      const endDate = "2026-01-01T00:00:00";
+      function countDown(targetDate) {
+        const now = Date.now();
+        const end = Date.parse(targetDate);
+        let ms = end - now;
+        ms = ms > 0 ? ms : 0;
+
+        const diffDate = new Date(ms);
+
+        const days = Math.floor(ms / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (ms % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor((ms % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((ms % (1000 * 60)) / 1000);
+
+        return {
+          milliseconds: ms,
+          days: days,
+          hours: hours,
+          minutes: minutes,
+          seconds: seconds,
+        };
+      }
+      function update() {
+        let data = countDown(endDate);
+        console.log(data);
+        if (data.milliseconds > 0) {
+          setTimeout(update, 1000);
+        } else {
+          document.getElementById("complete").textContent =
+            "Countdown complete!";
+        }
+      }
+      window.onload = update;
+    </script>
+    <style>
+      .body {
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body></body>
+</html>
