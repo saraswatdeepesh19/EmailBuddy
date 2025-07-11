@@ -9,3 +9,8 @@ function sendEmail() {
     "Email content has been converted to HTML format. Check the console for details."
   );
 }
+
+function toggleBold() {
+  const textArea = document.getElementById("editor");
+  console.log("Selection before toggle:", window.getSelection().toString());
+}

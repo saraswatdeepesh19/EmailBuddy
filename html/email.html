@@ -4,76 +4,63 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Email Buddy</title>
-    <link rel="stylesheet" href="../css/email-card.css" />
+    <link rel="stylesheet" href="../css/email.css" />
     <script src="../js/mail.js"></script>
   </head>
-  <body>
-    <div class="email-card">
-      <header>
-        <img src="../images/logo.png" alt="Logo" class="logo" />
-        <h2>Email Buddy</h2>
-      </header>
-      <article>
-        <form>
-          <div class="email-card-container">
-            <select id="to" name="to">
-              <option value="" disabled selected>To</option>
-              <option value="Sample Mail">Test Users</option>
-              <option value="Browser Users">Browser Users</option>
-              <option value="Device Users">Device Users</option>
-              <option value="All Users">All Users</option>
-            </select>
+  <body class="email-card">
+    <header>
+      <h2>Email Buddy</h2>
+    </header>
+    <article>
+      <div class="email-card-container">
+        <select id="to" name="to">
+          <option value="" disabled selected>To</option>
+          <option value="SampleMail">Test Users</option>
+          <option value="BrowserUsers">Browser Users</option>
+          <option value="DeviceUsers">Device Users</option>
+          <option value="AllUsers">All Users</option>
+        </select>
 
-            <input
-              type="text"
-              id="subject"
-              name="subject"
-              placeholder="Enter subject"
-            />
-            <div class="toolbar">
-              <img
-                src="../images/bold.png"
-                alt="Bold"
-                onclick="document.execCommand('bold')"
-              />
-              <img
-                src="../images/italic.png"
-                alt="Italic"
-                onclick="document.execCommand('italic')"
-              />
-              <img
-                src="../images/underline.png"
-                alt="Underline"
-                onclick="document.execCommand('underline')"
-              />
-              <img
-                src="../images/highlight.png"
-                alt="Highlight"
-                onclick="document.execCommand('backColor', true, 'yellow')"
-              />
-              <img
-                src="../images/unorderedList.png"
-                alt="unorderedList"
-                onclick="document.execCommand('insertUnorderedList')"
-              />
-              <img
-                src="../images/orderedList.png"
-                alt="orderedList"
-                onclick="document.execCommand('insertOrderedList')"
-              />
-            </div>
+        <input
+          type="text"
+          id="subject"
+          name="subject"
+          placeholder="Enter subject"
+        />
+        <input type="text" id="title" name="title" placeholder="Enter Title" />
+        <div class="toolbar">
+          <button class="tool-btn" title="Bold" onclick="toggleBold()">
+            <b>B</b>
+          </button>
+          <button class="tool-btn" title="Italic"><i>I</i></button>
+          <button class="tool-btn" title="Underline"><u>U</u></button>
+          <button class="tool-btn" title="Strikethrough"><s>S</s></button>
+          <button class="tool-btn" title="Highlight">
+            <mark><b>H</b></mark>
+          </button>
+          <button class="tool-btn" title="Bullet List">• List</button>
+          <button class="tool-btn" title="Numbered List">1. List</button>
+          <input type="color" value="#FF0000" id="color" />
+        </div>
 
-            <div id="editor" contenteditable="true"></div>
+        <textarea
+          name="mailBody"
+          id="mailBody"
+          contenteditable="true"
+        ></textarea>
 
-            <div class="email-trigger">
-              <button type="button" onclick="sendEmail()">Send Email</button>
-            </div>
-          </div>
-        </form>
-      </article>
-      <footer>
-        <p>&copy; 2025 Email Buddy. All rights reserved to Deepesh Saraswat</p>
-      </footer>
-    </div>
+        <div class="email-trigger">
+          <button type="button" class="preview-btn" onclick="preview()">
+            Preview
+          </button>
+          <button type="button" class="submit-btn" onclick="sendEmail()">
+            Send Email
+          </button>
+        </div>
+      </div>
+    </article>
+    <footer>
+      <p>&copy; 2025 Email Buddy. All rights reserved to Deepesh Saraswat</p>
+    </footer>
   </body>
 </html>
