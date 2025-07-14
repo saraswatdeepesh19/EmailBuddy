@@ -28,6 +28,7 @@
           placeholder="Enter subject"
         />
         <input type="text" id="title" name="title" placeholder="Enter Title" />
+
         <div class="toolbar">
           <button class="tool-btn" title="Bold" onclick="toggleBold()">
             <b>B</b>
@@ -43,11 +44,9 @@
           <input type="color" value="#FF0000" id="color" />
         </div>
 
-        <textarea
-          name="mailBody"
-          id="mailBody"
-          contenteditable="true"
-        ></textarea>
+        <textarea name="mailBody" id="mailBody" contenteditable="true">
+Write your email here...
+        </textarea>
 
         <div class="email-trigger">
           <button type="button" class="preview-btn" onclick="preview()">
